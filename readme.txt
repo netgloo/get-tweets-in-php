@@ -85,6 +85,7 @@ The `get_tweets()` function takes an array of configurations:
       // The Twitter account name
       'screen_name' => '...',
 
+
       // --- Optional ---
 
       // The number of tweets
@@ -108,6 +109,33 @@ The `get_tweets()` function takes an array of configurations:
       // the value if you want a more real-time behaviour (but not
       // less than 4 seconds to avoid to reach the rate limit).
       'cache_expiration' => 60,
+
+      // Templates
+
+      // Retweeted by text template
+      'retweeted_by_template' => 
+        '<em> Retweeted by {{user_name}}</em>',
+  
+      // Hash tag link template
+      'hashtag_link_template' => 
+        '<a href="{{hashtag_link}}" rel="nofollow" target="_blank">' .
+        '#{{hashtag_text}}</a>',
+  
+      // Url link template
+      'url_link_template' => 
+        '<a href="{{url_link}}" rel="nofollow" target="_blank" ' .
+        'title="{{url_title}}">{{url_text}}</a>',
+  
+      // User mention link template
+      'user_mention_link_template' => 
+        '<a href="{{user_mention_link}}" rel="nofollow" target="_blank" ' .
+        'title="{{user_mention_title}}">@{{user_mention_text}}</a>',
+  
+      // Media link template
+      'media_link_template' => 
+        '<a href="{{media_link}}" rel="nofollow" target="_blank" ' .
+        'title="{{media_title}}">{{media_text}}</a>'
+
     ];
 
     $tweets = \Netgloo\GetTweetsInPhp::get_tweets($configs);
@@ -200,7 +228,7 @@ Our custom properties (i.e. properties not from the Twitter's API) are prefixed 
 == Changelog ==
 
 = 1.2 =
-* Custom HTML templates for links and "retweeted by" texts.
+* Custom HTML templates for links and "retweeted by" text.
 * New hashtag link: https://twitter.com/hashtag.
 * Get media urls with https.
 * Cache disabled by default (as in the documentation).
