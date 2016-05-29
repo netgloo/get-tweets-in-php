@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Get Tweets in PHP
  * Author: Netgloo
- * Version: 1.1
+ * Version: 1.2
  * Author URI: http://netgloo.com
  * Description: Get tweets from a Twitter account with a couple of lines of PHP, and do anything you want with them.
  * License: GPLv2 or later
