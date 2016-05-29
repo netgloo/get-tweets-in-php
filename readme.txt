@@ -200,7 +200,8 @@ Our custom properties (i.e. properties not from the Twitter's API) are prefixed 
 == Changelog ==
 
 = 1.2 =
-* HTML templates for links and "retweeted by".
+* Custom HTML templates for links and "retweeted by" texts.
+* New hashtag link: https://twitter.com/hashtag.
 * Get media urls with https.
 * Cache disabled by default (as in the documentation).
 

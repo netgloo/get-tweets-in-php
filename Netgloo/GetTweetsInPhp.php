@@ -38,16 +38,40 @@ class GetTweetsInPhp {
    *   $configs = [
    * 
    *     // Required
+   * 
    *     'consumer_key' => '...',
    *     'consumer_secret' => '...',
    *     'screen_name' => '...',
    *   
    *     // Optional
+   * 
    *     'count' => 20,
    *     'include_rts' => true,
    *     'show_retweeted_by' => true,
    *     'cache_enabled' => false,
    *     'cache_expiration' => 60 // (seconds)
+   * 
+   *     // Templates
+   * 
+   *     'retweeted_by_template' => 
+   *       '<em> Retweeted by {{user_name}}</em>',
+   * 
+   *     'hashtag_link_template' => 
+   *       '<a href="{{hashtag_link}}" rel="nofollow" target="_blank">' .
+   *       '#{{hashtag_text}}</a>',
+   * 
+   *     'url_link_template' => 
+   *       '<a href="{{url_link}}" rel="nofollow" target="_blank" ' .
+   *       'title="{{url_title}}">{{url_text}}</a>',
+   * 
+   *     'user_mention_link_template' => 
+   *       '<a href="{{user_mention_link}}" rel="nofollow" target="_blank" ' .
+   *       'title="{{user_mention_title}}">@{{user_mention_text}}</a>',
+   * 
+   *     'media_link_template' => 
+   *       '<a href="{{media_link}}" rel="nofollow" target="_blank" ' .
+   *       'title="{{media_title}}">{{media_text}}</a>'
+   * 
    *   ];
    * 
    * Each tweet is an object as returned by Twitter APIs, with the following
@@ -71,7 +95,6 @@ class GetTweetsInPhp {
     // Set default values
     self::set_default($configs, 'count', 20);
     self::set_default($configs, 'include_rts', true);
-    self::set_default($configs, 'show_retweeted_by', true);
     self::set_default($configs, 'cache_enabled', false);
     self::set_default($configs, 'cache_expiration', 60);
 
@@ -81,9 +104,6 @@ class GetTweetsInPhp {
       'count', 
       'include_rts'
     ]);
-
-    // Get text formatter options
-    $show_retweeted_by = $configs['show_retweeted_by'];
 
     // Retrive the user_timeline (using the cache if enabled)
     $user_timeline = self::retrive_user_timeline(
@@ -103,7 +123,7 @@ class GetTweetsInPhp {
       // Set the 'n_html_text' attribute
       $tweet->n_html_text = TwitterTextFormatter::format_text(
         $user_tweet, 
-        $show_retweeted_by
+        $configs
       );
 
       // Set 'n_is_retweeted'
@@ -145,7 +165,7 @@ class GetTweetsInPhp {
   // --------------------------------------------------------------------------
 
   // Cache
-  const CACHE_TRANSIENT = 'GETTWEETSINPHP_1_0';
+  const CACHE_TRANSIENT = 'GETTWEETSINPHP_1_2';
 
   // --------------------------------------------------------------------------
 
