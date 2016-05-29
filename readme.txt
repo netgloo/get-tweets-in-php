@@ -3,7 +3,7 @@ Contributors: netgloo, azanelli, aboutnick
 Tags: twitter, tweet, tweets, latest-tweets, developers
 Requires at least: 4.0
 Tested up to: 4.5
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 
 Get latest tweets from a Twitter account with a couple of lines of PHP, and do anything you want with them.
