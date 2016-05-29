@@ -31,7 +31,7 @@ This plugin will add the PHP class `GetTweetsInPhp`. You can use this class as d
 
 = Example usage =
 
-Get and show latest tweets from 'http://twitter.com/netglooweb':
+Get and show latest tweets from [@netglooweb](http://twitter.com/netglooweb):
     
     // Set configurations
     $configs = [
@@ -53,13 +53,16 @@ Get and show latest tweets from 'http://twitter.com/netglooweb':
 
     // For each tweet show the HTML text and the attached image
     foreach ($tweets as $tweet) {
+
       echo "<p>";
       echo $tweet->n_html_text;
 
       if ($tweet->n_has_media_photo) {
         echo "<img src='{$tweet->n_media_photo_url}' width='100%' />";
       }
+
       echo "</p>";
+
     }
 
     // ...
@@ -170,7 +173,7 @@ To work this plugin, following component need to be installed in your server.
 
 * PHP version 5.3 or higher
 * cURL
-* WordPress 4.2.2
+* WordPress 4.2.2 or higher
 
 = Install =
 
@@ -191,7 +194,7 @@ Our custom properties (i.e. properties not from the Twitter's API) are prefixed 
 == Changelog ==
 
 = 1.2 =
-* Bug fix setting transient cache name.
+* Cache disabled by default (as in the documentation)
 
 = 1.1 =
 * Bug fix setting transient cache name.

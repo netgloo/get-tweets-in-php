@@ -72,7 +72,7 @@ class GetTweetsInPhp {
     self::set_default($configs, 'count', 20);
     self::set_default($configs, 'include_rts', true);
     self::set_default($configs, 'show_retweeted_by', true);
-    self::set_default($configs, 'cache_enabled', true);
+    self::set_default($configs, 'cache_enabled', false);
     self::set_default($configs, 'cache_expiration', 60);
 
     // Get the api's options
