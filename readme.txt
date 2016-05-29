@@ -165,6 +165,12 @@ Since we rely on the Twitter's `user_timeline` API, you should read the followin
 * https://dev.twitter.com/rest/public/timelines
 
 
+= Contributing =
+
+For patches, bug reports, suggestions, requests for features there is a Git repository on GitHub here:
+https://github.com/netgloo/get-tweets-in-php
+
+
 == Installation == 
 
 = Requirements =
@@ -194,8 +200,9 @@ Our custom properties (i.e. properties not from the Twitter's API) are prefixed 
 == Changelog ==
 
 = 1.2 =
-* Cache disabled by default (as in the documentation)
-* Get media urls with https
+* HTML templates for links and "retweeted by".
+* Get media urls with https.
+* Cache disabled by default (as in the documentation).
 
 = 1.1 =
 * Bug fix setting transient cache name.
