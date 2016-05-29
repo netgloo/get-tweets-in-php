@@ -116,7 +116,7 @@ class GetTweetsInPhp {
           if ($media->type != 'photo') {
             continue;
           }
-          $tweet->n_media_photo_urls[] = $media->media_url;
+          $tweet->n_media_photo_urls[] = $media->media_url_https;
         }
       }
 

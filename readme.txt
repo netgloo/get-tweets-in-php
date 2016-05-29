@@ -195,6 +195,7 @@ Our custom properties (i.e. properties not from the Twitter's API) are prefixed 
 
 = 1.2 =
 * Cache disabled by default (as in the documentation)
+* Get media urls with https
 
 = 1.1 =
 * Bug fix setting transient cache name.
