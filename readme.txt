@@ -112,7 +112,7 @@ The `get_tweets()` function takes an array of configurations:
 
       // Templates
 
-      // Retweeted by text template
+      // "Retweeted by" template
       'retweeted_by_template' => 
         '<em> Retweeted by {{user_name}}</em>',
   
@@ -195,7 +195,7 @@ Since we rely on the Twitter's `user_timeline` API, you should read the followin
 
 = Contributing =
 
-For patches, bug reports, suggestions, requests for features there is a Git repository on GitHub here:
+For patches, bug reports, suggestions or requests for features, there is a Git repository on GitHub here:
 https://github.com/netgloo/get-tweets-in-php
 
 
