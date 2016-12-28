@@ -2,7 +2,7 @@
 Contributors: netgloo, azanelli, aboutnick
 Tags: twitter, tweet, tweets, latest-tweets, developers
 Requires at least: 4.0
-Tested up to: 4.6
+Tested up to: 4.7
 Stable tag: 1.2
 License: GPLv2 or later
 
